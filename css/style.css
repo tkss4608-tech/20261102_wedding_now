@@ -1,0 +1,166 @@
+/* 기본 설정 */
+:root {
+  --paper: #fbf8f4;
+  --ink: #514b46;
+  --muted: #948b82;
+  --line: #d8cec4;
+  --accent: #e8aa9a;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #eee9e3;
+  font-family: "Noto Serif KR", "Nanum Myeongjo", "Apple SD Gothic Neo", serif;
+  font-weight: 400;
+  line-height: 1.85;
+}
+a { color: inherit; text-decoration: none; }
+button { color: inherit; font: inherit; }
+.site-shell {
+  /* PC와 모바일 모두 콘텐츠를 위에서 아래로 읽는 단일 스크롤 구조 */
+  width: min(760px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+}
+.column {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 0;
+  background: var(--paper);
+  box-shadow: none;
+}
+.top-nav {
+  height: 54px; padding: 0 28px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; font: 9px/1 Arial, sans-serif; letter-spacing: 1.3px;
+  color: #827970;
+}
+.top-nav a:first-child { color: #413a34; }
+.top-nav .heart { font-size: 20px; }
+.hero { text-align: center; }
+.hero-copy {
+  min-height: 250px; padding: 46px 16px 14px;
+  background: linear-gradient(180deg, #fbf2ed 0%, #f9eee7 68%, #f7e8df 100%);
+}
+.eyebrow { margin: 0 0 10px; color: #a1988e; font: 10px/1.4 Arial, sans-serif; letter-spacing: 2px; }
+.hero h1 { margin: 16px 0 10px; font-size: clamp(20px, 2vw, 25px); font-weight: 400; letter-spacing: 4px; }
+.hero h1 span { color: var(--accent); padding: 0 5px; font-size: 18px; }
+.intro { margin: 12px 0; color: #8f857c; font-size: 12px; letter-spacing: 1px; }
+.date-line { margin: 12px 0 0; font-size: 13px; letter-spacing: 3px; }
+.date-line small { font: 8px Arial, sans-serif; letter-spacing: 1px; color: var(--muted); }
+.down-link { display: inline-block; margin-top: 12px; color: #a89e94; }
+.hero-photo { display: block; width: 100%; aspect-ratio: 1.05 / 1; object-fit: cover; }
+.section-pad { padding: 32px 34px; }
+.invitation { min-height: 230px; background: #fcf9f5; }
+.invitation p:not(.script-title), .story > p:not(.eyebrow) { color: #80776f; font-size: 12px; line-height: 2.05; }
+.script-title { margin: 0 0 14px; font-family: "Snell Roundhand", "Segoe Script", cursive; font-size: clamp(30px, 3.3vw, 42px); font-style: italic; line-height: 1.2; color: #554b43; }
+.small-rule { width: 34px; height: 1px; background: #cfc3b8; margin: 25px 0; }
+.story { padding-top: 12px; }
+.story h2, .section-heading h2, .account-section h2 { margin: 0 0 10px; font-size: 24px; font-weight: 400; letter-spacing: 1px; }
+.story-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 18px; }
+.photo-button { display: block; padding: 0; border: 0; background: transparent; cursor: zoom-in; overflow: hidden; }
+.photo-button img { display: block; width: 100%; height: 100%; min-height: 125px; object-fit: cover; transition: transform .45s ease; }
+.photo-button:hover img { transform: scale(1.035); }
+.story-photos .photo-button { aspect-ratio: .78; }
+.timeline { display: flex; justify-content: space-between; gap: 8px; margin: 16px 0 30px; color: #8c8279; font-size: 9px; }
+.timeline span { display: flex; flex-direction: column; }
+.timeline b { font: 11px Georgia, serif; letter-spacing: 1px; margin-bottom: 3px; }
+.floral-note { min-height: 230px; padding: 30px 12px; text-align: right; background: linear-gradient(130deg, #f8f5f0, #f1e9e1); }
+.floral-note .script-title { color: #9b846e; }
+.floral-note p { font-size: 11px; color: #8e847b; }
+.section-heading { padding: 32px 18px 18px; text-align: center; }
+.section-heading h2 { font-size: 23px; }
+.section-heading > p:last-child { margin: 8px 0 0; color: #958b82; font-size: 11px; }
+.gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 0 10px; }
+.gallery-grid .photo-button { aspect-ratio: 1.08; }
+.gallery-grid .wide { grid-column: span 2; aspect-ratio: 1.75; }
+.gallery-grid .photo-button img { min-height: 0; }
+.gallery-hint { text-align: center; color: #a1988e; font-size: 10px; margin: 12px 0 28px; }
+.quote { padding: 10px 22px 28px; text-align: center; color: #857b72; font-size: 12px; line-height: 2; }
+.quote span { font: 36px Georgia, serif; color: #b6a99c; }
+.quote p { margin: 0; }
+.thanks { position: relative; min-height: 330px; overflow: hidden; text-align: center; }
+.thanks img { width: 100%; height: 330px; object-fit: cover; opacity: .65; }
+.thanks .script-title { position: absolute; right: 25px; bottom: 58px; font-size: 30px; }
+.thanks p:last-child { position: absolute; right: 28px; bottom: 12px; color: #6e6259; font-size: 10px; }
+.info-column { padding-bottom: 0; }
+.info-column .section-heading { padding-top: 38px; }
+.info-list { padding: 12px 30px 20px; }
+.info-item { display: grid; grid-template-columns: 28px 1fr; gap: 10px; margin: 12px 0 22px; }
+.info-icon { font-size: 21px; line-height: 1.3; text-align: center; color: #6f665d; }
+.info-item b { font-size: 11px; font-weight: 400; }
+.info-item p { margin: 3px 0 0; color: #81776f; font-size: 11px; line-height: 1.8; }
+.venue-photo { display: block; width: calc(100% - 20px); margin: 0 10px; aspect-ratio: 1.75; object-fit: cover; }
+.directions-heading { padding-top: 14px !important; }
+.directions-heading .small-rule { margin: 16px auto 20px; }
+.map-preview { display: block; margin: 0 14px; overflow: hidden; }
+.map-art {
+  position: relative; height: 155px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  background-color: #eeece6;
+  background-image: linear-gradient(27deg, transparent 46%, #fff 47%, #fff 50%, transparent 51%), linear-gradient(112deg, transparent 42%, #fff 43%, #fff 46%, transparent 47%), repeating-linear-gradient(0deg, transparent 0 30px, rgba(210,204,193,.55) 31px 32px), repeating-linear-gradient(90deg, transparent 0 34px, rgba(210,204,193,.55) 35px 36px);
+}
+.road { position: absolute; background: #fff; opacity: .95; transform: rotate(-20deg); }
+.road-one { width: 120%; height: 9px; top: 43%; left: -10%; }
+.road-two { width: 110%; height: 6px; top: 68%; left: -5%; transform: rotate(28deg); }
+.road-three { width: 8px; height: 130%; top: -10%; left: 72%; transform: rotate(12deg); }
+.park { position: absolute; width: 70px; height: 46px; right: 8%; top: 8%; border-radius: 45%; background: #dce5d7; opacity: .8; }
+.map-pin { position: absolute; z-index: 1; top: 27px; left: 50%; color: #c95c4d; font-size: 30px; text-shadow: 0 2px 3px #fff; }
+.map-art strong { z-index: 1; margin-top: 55px; padding: 3px 7px; background: rgba(255,255,255,.75); font-size: 10px; font-weight: 400; }
+.map-art small { position: absolute; bottom: 6px; right: 8px; color: #999; font: 8px Arial; letter-spacing: 1px; }
+.address { text-align: center; margin: 12px 0; color: #887e75; font-size: 10px; }
+.outline-button { display: flex; justify-content: center; align-items: center; gap: 12px; width: max-content; min-width: 175px; margin: 18px auto 28px; padding: 8px 18px; border: 1px solid #c9bfb5; background: transparent; color: #625950; font-size: 11px; cursor: pointer; }
+.account-section { padding: 0 20px 24px; text-align: center; }
+.account-section .small-rule { margin: 24px auto; }
+.account-section h2 { font-size: 21px; }
+.account-intro { color: #8a8077; font-size: 11px; }
+.account-card { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 9px 0; padding: 13px 10px; background: #f5f0eb; text-align: left; }
+.account-card > div { display: grid; grid-template-columns: 32px 48px 1fr; align-items: center; gap: 4px; min-width: 0; }
+.account-card b, .account-card span { font-size: 10px; font-weight: 400; white-space: nowrap; }
+.account-card small { font-size: 9px; color: #7f756d; overflow-wrap: anywhere; }
+.copy-button { flex: 0 0 auto; padding: 4px 9px; border: 1px solid #bdb2a8; background: transparent; font-size: 10px; cursor: pointer; }
+.closing { position: relative; height: 275px; overflow: hidden; background: #f4e9df; }
+.closing img { width: 100%; height: 100%; object-fit: cover; opacity: .82; }
+.closing .script-title { position: absolute; top: 28px; left: 22px; color: #40352e; font-size: 25px; text-shadow: 0 1px 8px rgba(255,255,255,.8); }
+.lightbox, .toast-dialog { border: 0; padding: 0; background: transparent; max-width: min(92vw, 900px); }
+.lightbox::backdrop, .toast-dialog::backdrop { background: rgba(30, 25, 21, .78); }
+.lightbox img { display: block; max-width: 92vw; max-height: 86vh; object-fit: contain; }
+.modal-close { position: absolute; top: -38px; right: 0; border: 0; background: transparent; color: white; font: 32px Arial; cursor: pointer; }
+.toast-dialog { width: min(330px, calc(100% - 36px)); padding: 24px 20px 8px; border-radius: 8px; background: var(--paper); text-align: center; color: var(--ink); }
+.toast-dialog p { font-size: 13px; }
+.toast-dialog .outline-button { min-width: 90px; margin: 14px auto 18px; }
+
+@media (max-width: 760px) {
+  body { background: var(--paper); }
+  .site-shell { width: 100%; margin: 0; }
+  .home-column, .gallery-column, .info-column { width: 100%; }
+  .top-nav { padding: 0 22px; height: 52px; }
+  .hero-copy { min-height: 245px; padding-top: 40px; }
+  .hero-photo { aspect-ratio: 1.12 / 1; max-height: 560px; }
+  .section-pad { padding-left: 28px; padding-right: 28px; }
+  .invitation { min-height: 210px; }
+  .story { padding-top: 20px; }
+  .story-photos .photo-button { aspect-ratio: .92; }
+  .floral-note { min-height: 180px; }
+  .section-heading { padding-top: 35px; }
+  .gallery-grid { padding: 0 14px; gap: 7px; }
+  .gallery-grid .photo-button { aspect-ratio: 1.15; }
+  .gallery-grid .wide { aspect-ratio: 1.65; }
+  .thanks { min-height: 290px; }
+  .thanks img { height: 290px; }
+  .info-list { padding-left: 28px; padding-right: 28px; }
+  .venue-photo { width: calc(100% - 28px); margin: 0 14px; }
+  .map-art { height: 180px; }
+  .account-section { padding-left: 22px; padding-right: 22px; }
+  .closing { height: 310px; }
+}
+@media (min-width: 761px) {
+  .site-shell { width: min(760px, calc(100% - 32px)); }
+  .column + .column { border-top: 1px solid #eee7e0; }
+}
